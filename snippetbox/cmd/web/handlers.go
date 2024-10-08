@@ -30,10 +30,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 	err = ts.ExecuteTemplate(w, "base", nil)
 	if err != nil {
 		log.Println(err.Error())
-		http.Error(w, "Internal Server Erro", 500)
+		http.Error(w, "Internal Server Error", 500)
 	}
 
-	w.Write([]byte("Welcome to SnippetBox"))
 }
 
 func snippetView(w http.ResponseWriter, r *http.Request) {
